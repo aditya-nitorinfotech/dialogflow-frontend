@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>Car Advise Chatbot Page</title>
+
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script>
+       // To minimise the height of chatbox
+        $(document).ready(function() {
+            window.addEventListener('dfMessengerLoaded', function (event) {
+            $r1 = document.querySelector("df-messenger");
+            $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+            $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+            var sheet = new CSSStyleSheet;
+            // manage box height from here
+            sheet.replaceSync( `div.chat-wrapper[opened="true"] {height:73% !important; width: 35% !important}`);
+            $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+            });
+        });
+//         const dfMessenger = document.querySelector('df-messenger');
+//         dfMessenger.addEventListener('df-messenger-loaded', function () {
+//         $r1 = document.querySelector("df-messenger");
+//         $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+
+//         var style = document.createElement( 'style' );
+//         style.innerHTML = `div.chat-wrapper[opened="true"] {height:350px; max-height:350px;}`;
+//         $r2.shadowRoot.appendChild( style );
+// });
+    </script>
+
+    <!-- <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=.2, user-scalable=no" /> -->
+
+
+<body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1">
+    </script>
+    <df-messenger df-cx="true" location="us-central1" chat-title="caradvise-chatbot"
+        agent-id="02337e81-d79f-451e-80b2-d4ff63e13884" language-code="en" margin: 0; padding: 0; position: fixed;
+        right: 0; transform: translateX(50%) translateY(50%); bottom: -90px;></df-messenger>
+</body>
+
+<head>
+
+</html>
